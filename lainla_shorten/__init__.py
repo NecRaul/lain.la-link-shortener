@@ -9,7 +9,10 @@ def main():
     args = parser.parse_args()
     shortened_url = shorten_url(args.url)
     
-    print(f"Shortened URL: {shortened_url}")
+    if (shortened_url != "Not a valid url."):
+        print(f"Shortened URL: {shortened_url}")
+    else:
+        print(shortened_url)
 
 if __name__ == "__main__":
     main()
