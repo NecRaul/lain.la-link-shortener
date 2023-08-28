@@ -1,12 +1,12 @@
 from setuptools import setup, find_packages
 
 VERSION = "0.0.2"
-DESCRIPTION = "URL Shortener using lain.la API."
+DESCRIPTION = "URL Shortener using s.lain.la API."
 LONG_DESCRIPTION = "s.lain.la can shorten URLs using CUrl. I tend to forget the CUrl syntax and arguments quite easily so I made a Python package to streamline things."
 AUTHOR = "NecRaul"
 
 setup(
-    name="lainla_shorten",
+    name="lain_shorten",
     version=VERSION,
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
@@ -24,7 +24,7 @@ setup(
     py_modules=["shorten"],
     entry_points={
         "console_scripts": [
-            "lainla = lainla_shorten.__init__:main",
+            "lain-shorten = lain_shorten.__init__:main",
         ],
     },
 )
