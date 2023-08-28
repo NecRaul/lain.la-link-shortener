@@ -12,7 +12,7 @@ setup(
     long_description=LONG_DESCRIPTION,
     author=AUTHOR,
     packages=find_packages(),
-    install_requires=["requests", "setuptools"],
+    install_requires=["requests", "pyperclip", "setuptools"],
     keywords=["python", "link shortener", "shortener", "lain", "lain.la", "s.lain.la"],
     classifiers=[
         "Development Status :: Ongoing",

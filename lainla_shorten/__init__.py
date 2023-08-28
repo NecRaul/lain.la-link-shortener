@@ -1,5 +1,6 @@
 from .shorten import shorten_url
 import argparse
+import pyperclip
 
 def main():
     
@@ -10,7 +11,8 @@ def main():
     shortened_url = shorten_url(args.url)
     
     if (shortened_url != "Not a valid url."):
-        print(f"Shortened URL: {shortened_url}")
+        pyperclip.copy(shortened_url)
+        print(f"Shortened URL: {shortened_url}\nCopied to clipboard.")
     else:
         print(shortened_url)
 
