@@ -11,5 +11,3 @@ def shorten_url(url):
     response = requests.post('https://s.lain.la', headers=headers, data=data)
     
     return response.text
-
-print(shorten_url(input("URL: ")))
