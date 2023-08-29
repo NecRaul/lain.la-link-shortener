@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = "1.0"
+VERSION = "1.1"
 DESCRIPTION = "URL Shortener using s.lain.la API."
 LONG_DESCRIPTION = "s.lain.la can shorten URLs using CUrl. I tend to forget the CUrl syntax and arguments quite easily so I made a Python package to streamline things."
 AUTHOR = "NecRaul"
@@ -12,7 +12,7 @@ setup(
     long_description=LONG_DESCRIPTION,
     author=AUTHOR,
     packages=find_packages(),
-    install_requires=["requests", "pyperclip", "setuptools"],
+    install_requires=["requests", "pyperclip"],
     keywords=["python", "link shortener", "shortener", "lain", "lain.la", "s.lain.la"],
     classifiers=[
         "Development Status :: 5 - Production/Stable",
