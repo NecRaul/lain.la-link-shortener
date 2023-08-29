@@ -22,7 +22,7 @@ or install the package by running
 pip install lain-shorten
 ```
 
-Python's native `re` and `argparse` packages are used to check validity of the url and parse return request along with set command arguments respectively.
+Python's native `re` (used to check validity of the url), `argparse` (parse return request and set command argument) and `setuptools` (used to build the script) packages are also used.
 
 ## How it works
 
