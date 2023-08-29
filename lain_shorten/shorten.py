@@ -2,7 +2,7 @@ import requests
 import re
 
 def url_check(url):
-    pattern = r"^https?://(?:www\.)?[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$"
+    pattern = "^https?:\\/\\/(?:www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b(?:[-a-zA-Z0-9()@:%_\\+.~#?&\\/=]*)$"
     return re.match(pattern, url) is not None
 
 def shorten_url(url):
@@ -26,5 +26,4 @@ def shorten_url(url):
     }
     
     response = requests.post('https://s.lain.la', headers=headers, data=data)
-    
     return response.text
