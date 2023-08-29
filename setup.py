@@ -16,7 +16,7 @@ setup(
     keywords=["python", "link shortener", "shortener", "lain", "lain.la", "s.lain.la"],
     classifiers=[
         "Development Status :: 4 - Beta",
-        "Environment :: Console"
+        "Environment :: Console",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
         "Natural Language :: English",
