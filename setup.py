@@ -15,11 +15,15 @@ setup(
     install_requires=["requests", "pyperclip", "setuptools"],
     keywords=["python", "link shortener", "shortener", "lain", "lain.la", "s.lain.la"],
     classifiers=[
-        "Development Status :: Ongoing",
-        "Intended Audience :: Everybody",
-        "Programming Language :: Python :: 3",
+        "Development Status :: 4 - Beta",
+        "Environment :: Console"
+        "Intended Audience :: Developers",
         "License :: OSI Approved :: MIT License",
-        "Operating System :: OS Independent"
+        "Natural Language :: English",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3",
+        "Topic :: Internet :: WWW/HTTP"
+        
     ],
     py_modules=["shorten"],
     entry_points={
