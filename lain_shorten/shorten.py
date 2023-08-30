@@ -10,10 +10,10 @@ def shorten_url(url):
     # checking if the url is valid
     is_valid_url = url_check(url)
     
+    # adding https:// to the start of the string if url is not valid
     url = f"https://{url}" if not is_valid_url else url
     
-    # checking if the url is valid after
-    # adding https:// to the start of the string
+    # checking if the url is valid again
     is_valid_url = url_check(url)
     
     if (not is_valid_url):
