@@ -3,7 +3,6 @@ import argparse
 import pyperclip
 
 def main():
-    
     parser = argparse.ArgumentParser(description="Shorten URLs using lain.la API")
     parser.add_argument("url", help="URL to be shortened")
     

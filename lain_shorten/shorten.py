@@ -6,7 +6,6 @@ def url_check(url):
     return re.match(pattern, url) is not None
 
 def shorten_url(url):
-    
     # checking if the url is valid
     is_valid_url = url_check(url)
     
