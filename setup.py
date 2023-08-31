@@ -1,8 +1,8 @@
 from setuptools import setup, find_packages
 
-VERSION = "1.1"
+VERSION = "1.2"
 DESCRIPTION = "URL Shortener using s.lain.la API."
-LONG_DESCRIPTION = "s.lain.la can shorten URLs using CUrl. I tend to forget the CUrl syntax and arguments quite easily so I made a Python package to streamline things."
+LONG_DESCRIPTION = "s.lain.la can shorten URLs using curl. I tend to forget the curl syntax and arguments quite easily so I made a Python package to streamline things."
 AUTHOR = "NecRaul"
 
 setup(

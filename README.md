@@ -4,7 +4,7 @@ URL Shortener using s.lain.la API.
 
 ## Requirements
 
-`requests` is used for CUrl command.
+`requests` is used for sending the API request.
 
 `pyperclip` is used to copy link to the clipboard.
 
@@ -24,9 +24,9 @@ Python's native `re` (used to check validity of the url), `argparse` (parse retu
 
 ## How it works
 
-`s.lain.la` can shorten URLs using CUrl. I tend to forget the CUrl syntax and arguments quite easily so I made a Python package to streamline things. Below is the aforementioned CUrl command.
+`s.lain.la` can shorten URLs using curl. I tend to forget the curl syntax and arguments quite easily, so I made a Python package to streamline things. Below is the aforementioned curl command.
 
-```CUrl
+```curl
 curl -X POST -d 'url=https://yoururlhere.com' https://s.lain.la
 ```
 
