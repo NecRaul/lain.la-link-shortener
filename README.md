@@ -8,8 +8,6 @@ URL Shortener using s.lain.la API.
 
 `pyperclip` is used to copy link to the clipboard.
 
-`setuptools` is used to build the script.
-
 If you want to build this on your own, you can install the requirements with
 
 ```Python
