@@ -4,9 +4,9 @@ URL Shortener using s.lain.la API.
 
 ## Requirements
 
-`requests` is used for sending the API request.
+`requests` is used to send the API request.
 
-`pyperclip` is used to copy link to the clipboard.
+`pyperclip` is used to copy the link to the clipboard.
 
 If you want to build this on your own, you can install the requirements with
 
