@@ -1,8 +1,9 @@
 from setuptools import setup, find_packages
 
-VERSION = "1.2"
+VERSION = "1.3"
 DESCRIPTION = "URL Shortener using s.lain.la API."
-LONG_DESCRIPTION = "s.lain.la can shorten URLs using curl. I tend to forget the curl syntax and arguments quite easily so I made a Python package to streamline things."
+with open("README.md", "r") as file:
+    LONG_DESCRIPTION = file.read()
 AUTHOR = "NecRaul"
 
 setup(
@@ -10,6 +11,7 @@ setup(
     version=VERSION,
     description=DESCRIPTION,
     long_description=LONG_DESCRIPTION,
+    long_description_content_type="text/markdown",
     author=AUTHOR,
     packages=find_packages(),
     install_requires=["requests", "pyperclip"],
