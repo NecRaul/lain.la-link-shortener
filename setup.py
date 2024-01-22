@@ -18,9 +18,9 @@ setup(
     keywords=["python", "link shortener", "shortener", "lain", "lain.la", "s.lain.la"],
     url="https://github.com/NecRaul/lain.la-link-shortener",
     project_urls={
-            'Documentation': 'https://github.com/NecRaul/lain.la-link-shortener#readme',
-            'Source': 'https://github.com/NecRaul/lain.la-link-shortener',
-        },
+        "Documentation": "https://github.com/NecRaul/lain.la-link-shortener#readme",
+        "Source": "https://github.com/NecRaul/lain.la-link-shortener",
+    },
     classifiers=[
         "Development Status :: 5 - Production/Stable",
         "Environment :: Console",
@@ -29,7 +29,7 @@ setup(
         "Natural Language :: English",
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 3",
-        "Topic :: Internet :: WWW/HTTP"
+        "Topic :: Internet :: WWW/HTTP",
     ],
     py_modules=["shorten"],
     entry_points={
