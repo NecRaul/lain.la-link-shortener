@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = "1.6"
+VERSION = "1.7"
 DESCRIPTION = "URL Shortener using s.lain.la API."
 with open("README.md", "r") as file:
     LONG_DESCRIPTION = file.read()
