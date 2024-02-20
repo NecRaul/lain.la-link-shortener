@@ -34,7 +34,7 @@ setup(
     py_modules=["shorten"],
     entry_points={
         "console_scripts": [
-            "lain-shorten = lain_shorten.__init__:main",
+            "lain-shorten = lain_shorten.main:main",
         ],
     },
 )
