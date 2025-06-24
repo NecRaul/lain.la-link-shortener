@@ -8,13 +8,13 @@ def main():
     parser.add_argument("url", help="URL to be shortened")
 
     args = parser.parse_args()
-    shortened_url = shorten_url(args.url)
+    response = shorten_url(args.url)
 
-    if shortened_url != "Not a valid url.":
-        pyperclip.copy(shortened_url)
-        print(f"Shortened URL: {shortened_url}\nCopied to clipboard.")
+    if response.startswith("http"):
+        pyperclip.copy(response)
+        print(f"Shortened URL: {response}\nCopied to clipboard.")
     else:
-        print(shortened_url)
+        print(response)
 
 
 if __name__ == "__main__":

@@ -1,35 +1,36 @@
 import requests
 import re
+from urllib.parse import urlparse
 
 
-def url_check(url):
-    pattern = (
-        r"^https?:\/\/(?:www\.)?"
+def ensure_url_has_scheme(url):
+    return url if urlparse(url).scheme else f"https://{url}"
+
+
+def is_valid_url(url):
+    url_pattern = re.compile(
+        r"^https?://"
+        r"(?:www\.)?"
         r"[-a-zA-Z0-9@:%._\+~#=]{1,256}\."
         r"[a-zA-Z0-9()]{1,6}\b"
         r"(?:[-a-zA-Z0-9()@:%_\+.~#?&/=]*)$"
     )
-    return re.match(pattern, url) is not None
+    return bool(url_pattern.match(url))
 
 
 def shorten_url(url):
-    # checking if the url is valid
-    is_valid_url = url_check(url)
+    url = ensure_url_has_scheme(url)
 
-    # adding https:// to the start of the string if url is not valid
-    url = f"https://{url}" if not is_valid_url else url
+    if not is_valid_url(url):
+        return "Error: Not a valid url."
 
-    # checking if the url is valid again
-    is_valid_url = url_check(url)
-
-    if not is_valid_url:
-        return "Not a valid url."
-
-    data = f"url={url}"
-
-    headers = {
-        "Content-Type": "application/x-www-form-urlencoded",
-    }
-
-    response = requests.post("https://s.lain.la", headers=headers, data=data)
-    return response.text
+    try:
+        response = requests.post(
+            "https://s.lain.la",
+            headers={"Content-Type": "application/x-www-form-urlencoded"},
+            data={"url": url},
+        )
+        response.raise_for_status()
+        return response.text
+    except requests.RequestException as e:
+        return f"Request failed: {e}"
