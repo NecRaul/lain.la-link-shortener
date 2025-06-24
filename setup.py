@@ -16,7 +16,15 @@ setup(
     author=AUTHOR,
     author_email=AUTHOR_EMAIL,
     packages=find_packages(),
-    keywords=["python", "link shortener", "shortener", "lain", "lain.la", "s.lain.la"],
+    keywords=[
+        "python",
+        "link shortener",
+        "shortener",
+        "lain",
+        "lain.la",
+        "s.lain.la",
+        "kuroneko",
+    ],
     url="https://github.com/NecRaul/lain.la-link-shortener",
     project_urls={
         "Documentation": "https://github.com/NecRaul/lain.la-link-shortener#readme",
