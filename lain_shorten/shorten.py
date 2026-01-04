@@ -1,6 +1,7 @@
-import requests
 import re
 from urllib.parse import urlparse
+
+import requests
 
 
 def ensure_url_has_scheme(url):

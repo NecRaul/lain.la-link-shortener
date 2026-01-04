@@ -1,5 +1,6 @@
-from .shorten import shorten_url
 import argparse
+
+from .shorten import shorten_url
 
 try:
     import pyperclip
