@@ -1,6 +1,12 @@
 from .shorten import shorten_url
 import argparse
-import pyperclip
+
+try:
+    import pyperclip
+
+    CLIP_OK = pyperclip.is_available()
+except Exception:
+    CLIP_OK = False
 
 
 def main():
@@ -11,8 +17,10 @@ def main():
     response = shorten_url(args.url)
 
     if response.startswith("http"):
-        pyperclip.copy(response)
-        print(f"Shortened URL: {response}\nCopied to clipboard.")
+        print(f"Shortened URL: {response}")
+        if CLIP_OK:
+            pyperclip.copy(response)
+            print("Copied to clipboard.")
     else:
         print(response)
 
