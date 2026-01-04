@@ -1,41 +1,61 @@
 # lain.la-link-shortener
 
-URL Shortener using s.lain.la API.
+URL Shortener using `s.lain.la` API.
 
-## Requirements
+## Installation
 
-`requests` is used to send the API request.
+### Via PyPI (Recommended)
 
-`pyperclip` is used to copy the link to the clipboard.
-
-If you want to build this on your own, you can install the requirements with
-
-```Python
-pip install -r requirements.txt
-```
-
-or install the package by running
-
-```Python
+```sh
+# Basic installation
 pip install lain-shorten
+
+# With clipboard support (recommended for desktop)
+pip install lain-shorten[default]
 ```
 
-Python's native `re` (used to check validity of the url), `argparse` (parse return request and set command argument) and `setuptools` (used to build the script) packages are also used.
+### From Source (Development)
+
+```sh
+git clone git@github.com:NecRaul/lain.la-link-shortener.git
+cd lain-la-link-shortener
+pip install -e .[dev]
+```
+
+## Usage
+
+Simply provide a URL. The tool automatically handles protocol validation and formatting.
+
+```sh
+# Standard usage
+lain-shorten https://kuroneko.dev
+
+# Protocol-less (automatically prepends https://)
+lain-shorten kuroneko.dev
+```
+
+## Dependencies
+
+* [requests](https://github.com/psf/requests): send the API request for shortening.
+  * [urllib3](https://github.com/urllib3/urllib3): check validity of the URL provided.
+
+### Optional
+
+* [pyperclip](https://github.com/asweigart/pyperclip) - copy the shortened URL to the clipboard. (optional)
 
 ## How it works
 
-`s.lain.la` can shorten URLs using curl. I tend to forget the curl syntax and arguments quite easily, so I made a Python package to streamline things. Below is the aforementioned curl command.
+The `s.lain.la` service allows shortening URLs via a `POST` request. This tool automates the process to avoid typing long `curl` strings:
 
-```curl
-curl -X POST -d 'url=https://yoururlhere.com' https://s.lain.la
+### The Manual Way
+
+```sh
+curl -X POST -d 'url=https://kuroneko.dev' https://s.lain.la
 ```
 
-I just wrapped it inside Python and added validation to check for links and copied the return address to clipboard for ease of use.
+### The lain-shorten way
 
-You can run the script with
-
-```Python
-lain-shorten <your-url-here>
-```
-
-I added support for links not starting with http/https as well.
+* Validation: Uses `urllib3` to ensure the URL is formatted correctly.
+* Normalization: Automatically adds `https://` if missing.
+* API Request: Sends the `POST` request via `requests`.
+* Clipboard (Optional): If `pyperclip` is installed, the result is instantly copied to your clipboard.
