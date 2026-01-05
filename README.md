@@ -11,7 +11,7 @@ URL Shortener using `s.lain.la` API.
 pip install lain-shorten
 
 # With clipboard support (recommended for desktop)
-pip install lain-shorten[default]
+pip install lain-shorten[clipboard]
 ```
 
 ### From Source (Development)
@@ -19,7 +19,7 @@ pip install lain-shorten[default]
 ```sh
 git clone git@github.com:NecRaul/lain.la-link-shortener.git
 cd lain-la-link-shortener
-pip install -e .[dev]
+pip install -e .[clipboard,dev,build]
 ```
 
 ## Usage
