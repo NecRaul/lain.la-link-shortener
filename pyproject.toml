@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "lain_shorten"
-version = "1.14"
+version = "1.15"
 description = "URL Shortener using s.lain.la API."
 readme = "README.md"
 authors = [{ name = "NecRaul", email = "necraul@kuroneko.dev" }]
