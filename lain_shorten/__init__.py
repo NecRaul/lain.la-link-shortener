@@ -2,13 +2,6 @@ import argparse
 
 from .shorten import shorten_url
 
-try:
-    import pyperclip
-
-    CLIP_OK = pyperclip.is_available()
-except Exception:
-    CLIP_OK = False
-
 
 def main():
     parser = argparse.ArgumentParser(description="Shorten URLs using lain.la API")
@@ -19,9 +12,14 @@ def main():
 
     if response.startswith("http"):
         print(f"Shortened URL: {response}")
-        if CLIP_OK:
+
+        try:
+            import pyperclip
+
             pyperclip.copy(response)
             print("Copied to clipboard.")
+        except Exception:
+            pass
     else:
         print(response)
 
