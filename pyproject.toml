@@ -4,7 +4,7 @@ build-backend = "uv_build"
 
 [project]
 name = "lain-shorten"
-version = "1.15"
+version = "1.16"
 description = "URL Shortener using s.lain.la API."
 readme = "README.md"
 authors = [{ name = "NecRaul", email = "necraul@kuroneko.dev" }]
