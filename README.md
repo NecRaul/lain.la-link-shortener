@@ -103,13 +103,13 @@ lain-shorten -v
 
 ## Supported Schemes
 
-- `http://` and `https://` links
-- protocol-less domains (automatically normalized to `http://`)
-- `irc://` and `ircs://` links
-- `ssh://` links
-- `mailto://` and `xmpp://` links
-- `sms://` and `tel://` links
-- `magnet:` torrent links
+- `http://` and `https://` links.
+- protocol-less domains (automatically normalized to `http://`).
+- `irc://` and `ircs://` links.
+- `ssh://` links.
+- `mailto://` and `xmpp://` links.
+- `sms://` and `tel://` links.
+- `magnet:` torrent links.
 
 ## Dependencies
 
