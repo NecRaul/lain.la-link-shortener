@@ -4,4 +4,4 @@ try:
     __version__ = importlib.metadata.version("lain_shorten")
 
 except importlib.metadata.PackageNotFoundError:
-    __version__ = "1.17"
+    __version__ = "1.18"
