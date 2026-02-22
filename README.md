@@ -1,4 +1,4 @@
-# lain.la-link-shortener
+# lain-shorten
 
 A simple CLI URL shortener using `s.lain.la` API, with optional clipboard copy.
 
