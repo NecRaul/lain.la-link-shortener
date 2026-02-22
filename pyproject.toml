@@ -5,18 +5,18 @@ build-backend = "uv_build"
 [project]
 name = "lain-shorten"
 version = "1.16"
-description = "URL Shortener using s.lain.la API."
+description = "A simple CLI URL shortener using s.lain.la API, with optional clipboard copy."
 readme = "README.md"
 authors = [{ name = "NecRaul", email = "necraul@kuroneko.dev" }]
 license = "LGPL-2.1-only"
 license-files = ["LICENSE"]
 keywords = [
   "python",
-  "link shortener",
+  "link-shorten",
+  "link-shortener",
   "shortener",
+  "lain-shorten",
   "lain",
-  "lain.la",
-  "s.lain.la",
   "kuroneko",
 ]
 requires-python = ">=3.10"
@@ -40,10 +40,10 @@ classifiers = [
 clipboard = ["pyperclip>=1.11.0"]
 
 [project.urls]
-Homepage = "https://github.com/NecRaul/lain.la-link-shortener"
-Documentation = "https://github.com/NecRaul/lain.la-link-shortener#readme"
-Repository = "https://github.com/NecRaul/lain.la-link-shortener"
-Issues = "https://github.com/NecRaul/lain.la-link-shortener/issues"
+Homepage = "https://github.com/NecRaul/lain-shorten"
+Documentation = "https://github.com/NecRaul/lain-shorten#readme"
+Repository = "https://github.com/NecRaul/lain-shorten"
+Issues = "https://github.com/NecRaul/lain-shorten/issues"
 
 [project.scripts]
 lain-shorten = "lain_shorten.cli:main"
