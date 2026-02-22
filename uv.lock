@@ -206,7 +206,7 @@ wheels = [
 
 [[package]]
 name = "lain-shorten"
-version = "1.18"
+version = "1.19"
 source = { editable = "." }
 dependencies = [
     { name = "requests" },
