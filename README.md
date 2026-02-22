@@ -97,8 +97,8 @@ xmpp:necraul@kuroneko.dev \
 tel:+15551234567
 
 # Display help and version
-lain-upload -h
-lain-upload -v
+lain-shorten -h
+lain-shorten -v
 ```
 
 ## Supported Schemes

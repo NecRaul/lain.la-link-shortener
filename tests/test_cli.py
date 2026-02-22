@@ -22,20 +22,6 @@ class CliTests(unittest.TestCase):
             self.assertIn(self.mock_shortened, stdout.getvalue())
             self.assertIn("URL(s) copied to clipboard", stderr.getvalue())
 
-    # def test_shortens_url_and_prints_to_stdout(self):
-    #     self.mock_shortened = "http://short.url/abc123"
-    #
-    #     with (
-    #         patch("lain_shorten.cli.shorten_url", return_value=self.mock_shortened),
-    #         patch("sys.argv", ["lain-shorten", "https://example.com"]),
-    #         patch("sys.stdout", new_callable=io.StringIO) as stdout,
-    #         patch("sys.stderr", new_callable=io.StringIO) as stderr,
-    #     ):
-    #         cli.main()
-    #
-    #         self.assertIn(self.mock_shortened, stdout.getvalue())
-    #         self.assertIn("URL(s) copied to clipboard", stderr.getvalue())
-
     def test_opens_browser_when_flag_is_used(self):
         shortened_url = "http://short.url/abc123"
 
