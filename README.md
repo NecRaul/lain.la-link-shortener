@@ -1,6 +1,6 @@
 # lain.la-link-shortener
 
-URL Shortener using `s.lain.la` API.
+A simple CLI URL shortener using `s.lain.la` API, with optional clipboard copy.
 
 ## Installation
 
@@ -42,8 +42,8 @@ uv run --with "lain-shorten[clipboard]" lain-shorten <url1> <url2> <url3>
 
 ```sh
 # Clone the repository and navigate to it
-git clone git@github.com:NecRaul/lain.la-link-shortener.git
-cd lain.la-link-shortener
+git clone git@github.com:NecRaul/lain-shorten.git
+cd lain-shorten
 
 # Install environment and all development dependencies (mandatory and optional)
 uv sync --dev
@@ -56,11 +56,16 @@ uv run pre-commit run --all-files
 
 # Run the local version
 uv run lain-shorten <url1> <url2> <url3>
+
+# Run tests
+uv run pytest tests
 ```
 
 ## Usage
 
 Simply provide a URL, and the tool will automatically handle protocol validation and formatting.
+
+Use `--open` to open each generated short URL in your default browser right after shortening. This makes it easy to verify each format resolves as expected in a real browser session.
 
 ```sh
 # Shorten a URL
@@ -68,15 +73,51 @@ lain-shorten https://kuroneko.dev
 
 # Protocol-less (automatically prepends http://)
 lain-shorten kuroneko.dev
+
+# irc
+lain-shorten irc://irc.libera.chat/#archlinux
+
+# ssh
+lain-shorten ssh://necraul@kuroneko.dev
+
+# mailto
+lain-shorten mailto:necraul@kuroneko.dev
+
+# sms
+lain-shorten sms:+15551234567
+
+# magnet torrent
+lain-shorten "magnet:?xt=urn:btih:0123456789abcdef0123456789abcdef01234567&dn=Example"
+
+# Open shortened URLs using the default browser
+lain-shorten --open \
+http://kuroneko.dev \
+ircs://irc.libera.chat:6697/#archlinux \
+xmpp:necraul@kuroneko.dev \
+tel:+15551234567
+
+# Display help and version
+lain-upload -h
+lain-upload -v
 ```
+
+## Supported Schemes
+
+- `http://` and `https://` links
+- protocol-less domains (automatically normalized to `http://`)
+- `irc://` and `ircs://` links
+- `ssh://` links
+- `mailto://` and `xmpp://` links
+- `sms://` and `tel://` links
+- `magnet:` torrent links
 
 ## Dependencies
 
-* [requests](https://github.com/psf/requests): send the API request for shortening.
+- [requests](https://github.com/psf/requests): send the API request for shortening.
 
 ### Optional
 
-* [pyperclip](https://github.com/asweigart/pyperclip): copy the shortened URL to the clipboard.
+- [pyperclip](https://github.com/asweigart/pyperclip): copy the shortened URLs to the clipboard.
 
 ## How it works
 
@@ -92,8 +133,12 @@ curl -d "url=https://kuroneko.dev" https://s.lain.la
 
 ### The lain-shorten way
 
-* Batch Processing: Shorten multiple URLs in a single command execution, saving time over individual manual requests.
-* Validation: Uses `urllib` to ensure the URL is formatted correctly.
-* API Request: Sends the `POST` request via `requests`.
-* Normalization: Automatically adds `http://` if missing.
-* Clipboard (Optional): If `pyperclip` is installed, the result is instantly copied to your clipboard.
+- Batch Processing: Shorten multiple URLs in a single command execution, saving time over individual manual requests.
+- Validation: Uses `urllib` to ensure the URL is formatted correctly.
+- API Request: Sends the `POST` request via `requests`.
+- Normalization: Automatically adds `http://` if missing.
+- Clipboard (Optional): If `pyperclip` is installed, the result is instantly copied to your clipboard.
+
+## Special thanks
+
+- To **7666** of <https://lain.la/> for running the [shortener](https://s.lain.la/) service that inspired this project.
